@@ -1,24 +1,25 @@
+// src/reducers/index.js
 export const reducer = (state, action) => {
   switch (action.type) {
     case "FETCH_INIT":
       return {
         ...state,
-        loading: true
-      }
+        loading: true,
+      };
     case "FETCH_SUCCESS":
       return {
         ...state,
         loading: false,
         error: "",
-        currencies: action.payload
-      }
+        currencies: action.payload,
+      };
     case "FETCH_FAILURE":
       return {
         ...state,
         loading: false,
-        error: action.payload
-      }
+        error: action.payload,
+      };
     default:
-      throw new Error("Unsupported action type")
+      throw new Error("Unsupported action type");
   }
-}
+};
